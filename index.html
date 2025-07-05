@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Code Explainer</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background-color: #f4f4f4; }
+        textarea { width: 100%; height: 200px; font-family: monospace; }
+        button { margin-top: 10px; }
+        .output { background: #fff; padding: 10px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>AI Code Explainer</h1>
+    <form method="POST" action="/explain">
+        <label>Paste Your Code:</label><br>
+        <textarea name="code">{{ code if code else '' }}</textarea><br>
+        <button type="submit">Explain Code</button>
+    </form>
+    {% if explanation %}
+    <div class="output">
+        <h3>Explanation:</h3>
+        <p>{{ explanation }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
